@@ -20,19 +20,22 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void enterTheUsername(String username)
-	{
+	public LoginPage enterTheUsername(String username)  //Loginpage means, this method deosn't goes to another page,stays in loginpage
+	{													//means classname
 		usernamefield.sendKeys(username);
+		return this; //returns loginpage itself
 	}
 	
-	public void enterThePassword(String password)
+	public LoginPage enterThePassword(String password)
 	{
 		passwordfield.sendKeys(password);
+		return this;                 //return thismeans,this method doesn't goes to another page.amd stays in the same page.
 	}
 	
-	public void clickOnSignInButton()
+	public HomePage clickOnSignInButton()//goes to homepage when clicking on submit button
 	{
 		signin.click();
+		return new HomePage(driver);
 	}
 	
 	public boolean isDashboardDisplayed()

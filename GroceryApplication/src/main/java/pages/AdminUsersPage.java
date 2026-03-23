@@ -11,13 +11,13 @@ public class AdminUsersPage {
 
 	public WebDriver driver;
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")WebElement moreinfo;
+	//@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")WebElement moreinfo;
 	@FindBy(xpath="//a[@onclick='click_button(1)']")WebElement newbutton;
 	@FindBy(xpath="//input[@name='username']")WebElement usernamefield;
 	@FindBy(xpath="//input[@name='password']")WebElement passwordfield;
 	@FindBy(xpath="//select[@name='user_type']")WebElement usertypefield;
 	@FindBy(xpath="//button[@name='Create']")WebElement save;
-	@FindBy(xpath="//h5[contains(text(),'ert!')]")WebElement alert;
+	@FindBy(xpath="//div[contains(@class,'alert-success')]")WebElement alert;
 	
 	public AdminUsersPage(WebDriver driver) {
 		this.driver=driver;
@@ -25,35 +25,40 @@ public class AdminUsersPage {
 	}
 		
 	
-	public void clickOnMoreInfo()
-	{
-		moreinfo.click();
-	}
-	
-	public void clickOnNewButton()
+//	public void clickOAdminUsersnMoreInfo()
+//	{
+//		moreinfo.click();
+//	}
+//	
+	public AdminUsersPage clickOnAdminUsersNewButton()
 	{
 		newbutton.click();
+		return this;
 	}
 	
-	public void enterUsername(String username)
+	public AdminUsersPage enterUsername(String username)
 	{
 		usernamefield.sendKeys(username);
+		return this;
 	}
 	
-	public void enterPassword(String password)
+	public AdminUsersPage enterPassword(String password)
 	{
 		passwordfield.sendKeys(password);
+		return this;
 	}
 	
-	public void selectUserType(String usertype)
+	public AdminUsersPage selectUserType()
 	{
 		PageUtility pageutility=new PageUtility();
-		pageutility.dropDownVisibleText(usertypefield, usertype);
+		pageutility.dropDownVisibleText(usertypefield, "Staff");
+		return this;
 	}
 	
-	public void clickOnSave()
+	public AdminUsersPage clickOnSave()
 	{
 		save.click();
+		return this;
 	}
 	
 	public boolean isAlertDisplayed()

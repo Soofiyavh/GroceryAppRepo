@@ -5,16 +5,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class ManageNewsPage {
 
 public WebDriver driver;
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']")WebElement moreinfo;
+	//@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']")WebElement managenewsmoreinfo;
 	@FindBy(xpath="//a[@onclick='click_button(1)']")WebElement newbutton;
 	@FindBy(xpath="//textarea[@id='news']")WebElement newnews;
 	@FindBy(xpath="//button[@type='submit']")WebElement save;
 	@FindBy(xpath="//a[@type='button']")WebElement cancel;
-	@FindBy(xpath="//h5[contains(text(),'ert!')]")WebElement alert;
+	@FindBy(xpath="//div[contains(@class,'alert-success')]")WebElement alert;
 	
 	public ManageNewsPage(WebDriver driver) {
 		this.driver=driver;
@@ -22,29 +24,35 @@ public WebDriver driver;
 	}
 		
 	
-	public void clickOnMoreInfo()
-	{
-		moreinfo.click();
-	}
+//	public void clickOnManageNewsMoreInfo()
+//	{
+//		managenewsmoreinfo.click();
+//	}
 	
-	public void clickOnNewButton()
+	public ManageNewsPage clickOnManageNewsNewButton()
 	{
 		newbutton.click();
+		return this;
 	}
 	
-	public void enterTheNews(String news)
+	public ManageNewsPage enterTheNews(String news)
 	{
 		newnews.sendKeys(news);
+		return this;
 	}
 	
-	public void clickOnSave()
+	public ManageNewsPage clickOnSave()
 	{
+		//WaitUtility waitutility=new WaitUtility();    //explicit wait implementation.not uses for every elemnt. 
+		//waitutility.waitForElementToBeClickable(driver, save); //uses for element which takes time to load during runtime
 		save.click();
+		return this;
 	}
 	
-	public void clickOnCancelButton()
+	public ManageNewsPage clickOnCancelButton()
 	{
 		cancel.click();
+		return this;
 	}
 	
 	public boolean isAlertDisplayed()
