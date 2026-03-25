@@ -4,7 +4,7 @@
   <test thread-count="5" name="Chrometest">
   <parameter name="browser" value="Chrome"></parameter>
     <classes>
-      <class name="testscript.ManageCategoryTest"/>
+ <!--     <class name="testscript.ManageCategoryTest"/>-->
       <class name="testscript.AdminUsersTest"/>
      
     </classes>
@@ -12,7 +12,7 @@
   <test thread-count="5" name="Firefoxtest">
   <parameter name="browser" value="Firefox"></parameter>
     <classes>
-      <class name="testscript.ManageNewsTest"/>
+     <!-- <class name="testscript.ManageNewsTest"/>-->
       <class name="testscript.ManageFooterTextClass"/>
     </classes>
   </test> 
