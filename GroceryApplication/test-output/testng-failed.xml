@@ -4,12 +4,12 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="testscript.AdminUsersTest">
+      <class name="testscript.ManageCategoryTest">
         <methods>
-          <include name="verifyTheUserIsAbleToAddAdminUsersInformationsAndDisplaysAlert"/>
+          <include name="verifyTheUserIsAbleToAddNewCategoryAndDisplaysAlert"/>
           <include name="browserInitialization"/>
         </methods>
-      </class> <!-- testscript.AdminUsersTest -->
+      </class> <!-- testscript.ManageCategoryTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

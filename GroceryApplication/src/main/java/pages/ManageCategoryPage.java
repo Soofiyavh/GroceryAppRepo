@@ -22,7 +22,7 @@ public WebDriver driver;
 	@FindBy(xpath="//li[@id='134-selectable']")WebElement discountfield;
 	@FindBy(xpath="//input[@id='main_img']")WebElement choosefile;
 	@FindBy(xpath="//button[text()='Save']")WebElement savebutton;
-	@FindBy(xpath="//div[contains(@class,'alert-success')]']")WebElement alert;
+	@FindBy(xpath="//div[contains(@class,'alert-success')]")WebElement alert;
 	
 	public ManageCategoryPage(WebDriver driver) {
 		this.driver=driver;

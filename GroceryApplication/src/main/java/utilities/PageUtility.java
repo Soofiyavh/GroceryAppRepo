@@ -105,4 +105,25 @@ public class PageUtility {
 		Alert alert=driver.switchTo().alert();
 		alert.sendKeys(text);
 	}
+	
+	public void pageScrollUpToDown(WebDriver driver)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(x,y)","");  //scroll from top to bottom
+		//js.executeScript("window.scrollBy(0,150)","");  //scroll from top to bottom
+	}
+	
+	public void pageScrollDownToTop(WebDriver driver)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-50)","");
+		//js.executeScript("window.scrollBy(0,-50)","");  //scroll from bottom to top
+	}
+	
+	public void pageScrollUpToDownEnd(WebDriver driver)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");//page scroll upto the end
+	}
 }
+

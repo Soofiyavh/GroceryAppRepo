@@ -25,8 +25,9 @@ public class HomeTest extends Base {
 		homepage=loginpage.clickOnSignInButton();
 		
 		//HomePage homepage = new HomePage(driver);
-		homepage.clickOnAdminIcon().clickOnLogout();
-		//logout.clickOnLogout();
+		homepage.clickOnAdminIcon();
+		loginpage=homepage.clickOnLogout();
+		
 		boolean loginpagelogout = homepage.isSighnButtonDisplayed();
 		Assert.assertTrue(loginpagelogout,Constant.LOGOUT);
 
